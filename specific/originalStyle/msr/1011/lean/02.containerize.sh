@@ -3,6 +3,7 @@
 . ./setEnv.sh
 . "${SUIF_CACHE_HOME}/01.scripts/commonFunctions.sh"
 
+
 logI "Containerizing MS according to product default approach"
 cd "${SUIF_INSTALL_INSTALL_DIR}/IntegrationServer/docker" || exit 1
 # If a specific image is specified, use that, else use the default
