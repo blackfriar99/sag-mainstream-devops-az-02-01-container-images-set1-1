@@ -7,7 +7,7 @@
 logI "Containerizing MS according to product default approach"
 cd "${SUIF_INSTALL_INSTALL_DIR}/IntegrationServer/docker" || exit 1
 # If a specific image is specified, use that, else use the default
-if [[ "${CONTAINER_IMGE}" ]]; then
+if [[ "${CONTAINER_IMAGE}" ]]; then
   ./is_container.sh createLeanDockerfile -Dfile.name=Dockerfile_IS -Dimage.name="${CONTAINER_IMAGE}"
 else
   ./is_container.sh createLeanDockerfile -Dfile.name=Dockerfile_IS
