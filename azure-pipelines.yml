@@ -13,15 +13,15 @@ variables:
 
 jobs:
 
-- job: msr1011leanOriginalApproach
-  displayName: 'MSR 10.11 lean original approach'
+- job: msr1015leanOriginalApproach
+  displayName: 'MSR 10.15 lean original approach'
   steps:
 
     # In general the provided code is reusable and will be templatized when mature enough
     # Write here the job specific parameters for now
     # This job is specialized for MSR/1011/lean
     - script: |
-        JOB_SUIF_TEMPLATE="MSR/1011/lean"
+        JOB_SUIF_TEMPLATE="MSR/1015/lean"
         echo "Job will use SUIF template ${JOB_SUIF_TEMPLATE}"
         echo "##vso[task.setvariable variable=JOB_SUIF_TEMPLATE;]${JOB_SUIF_TEMPLATE}"
       displayName: "Init Specifics"
@@ -71,12 +71,12 @@ jobs:
       inputs:
         secureFile: 'msr-license.xml'
 
-    # Setup MSR 10.11 lean
-    - script: ./specific/originalStyle/msr/1011/lean/01.install.sh
+    # Setup MSR 10.15 lean
+    - script: ./specific/originalStyle/msr/1015/lean/01.install.sh
       displayName: 'Install MSR'
 
     # Containerize
-    - script: ./specific/originalStyle/msr/1011/lean/02.containerize.sh
+    - script: ./specific/originalStyle/msr/1015/lean/02.containerize.sh
       displayName: 'Containerize MSR'
 
     # Service Principal is required to connect to ACR
